@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'country-search-input',
@@ -7,10 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './search-input.component.css'
 })
 export class SearchInputComponent {
+  @Input() buscar: string = "";
 
   onSearch(value: string): void {
-    // Logic for searching by capital
+
+   this.buscar=value;
     console.log({ value });
+    console.log('recibidio: ', this.buscar);
+
 
   }
 
