@@ -9,16 +9,15 @@ import { CountryListComponent } from "../../country-list/country-list.component"
   styleUrl: './by-capital-page.component.css'
 })
 export class ByCapitalPageComponent implements OnInit {
-  recibe: string = "";
+  recepcionMensaje: string = "";
 
   ngOnInit(): void {
-console.log("fff",this.recibe);
+    console.log('onInit by-capital');
+    console.log('mostrar que: ', this.recepcionMensaje);
 
   }
 
   metodo(mensaje: string) {
-    console.log('dentro del metodo; ', mensaje);
-    console.log('haber verifico: ',this.recibe);
 
   }
 

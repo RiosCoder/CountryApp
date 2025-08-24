@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'country-search-input',
@@ -6,16 +6,17 @@ import { Component, Input } from '@angular/core';
   templateUrl: './search-input.component.html',
   styleUrl: './search-input.component.css'
 })
-export class SearchInputComponent {
-  @Input() buscar: string = "";
+export class SearchInputComponent implements OnInit {
+  @Input() mensaje: string = "";
+
+  ngOnInit(): void {
+    console.log('onInit searchInput');
+
+  }
+
 
   onSearch(value: string): void {
-
-   this.buscar=value;
-    console.log({ value });
-    console.log('recibidio: ', this.buscar);
-
-
+    this.mensaje = value;
   }
 
 }

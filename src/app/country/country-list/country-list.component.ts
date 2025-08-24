@@ -7,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './country-list.component.html',
   styleUrl: './country-list.component.css'
 })
-export class CountryListComponent implements OnInit{
+export class CountryListComponent implements OnInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.log('on init country list component');
+
   }
-  @Input() listar:string='';
-lista:string='mostrar';
+  @Input() listar: string = '';
+  lista: string = 'mostrar';
 }
