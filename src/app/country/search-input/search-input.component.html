@@ -2,8 +2,9 @@
   <input type="text" class="input input-bordered mr-2 w-56"
    placeholder="Buscar paises por nombre"
    autofocus #textSearch
-    (keyup.enter)="onSearch(textSearch.value)">
-
+    (keyup.enter)="onSearch(textSearch.value)"
+    [placeholder]="placeholder"
+    >
   <button class="btn btn-primary" (click)="onSearch(textSearch.value)">Buscar
 
   </button>

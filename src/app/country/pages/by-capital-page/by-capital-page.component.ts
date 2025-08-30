@@ -4,11 +4,12 @@ import { CountryListComponent } from "../../country-list/country-list.component"
 
 @Component({
   selector: 'app-by-capital-page',
-  imports: [SearchInputComponent, CountryListComponent],
+  imports: [CountryListComponent, SearchInputComponent],
   templateUrl: './by-capital-page.component.html',
   styleUrl: './by-capital-page.component.css'
 })
 export class ByCapitalPageComponent implements OnInit {
+  place:string='por capital';
   recepcionMensaje: string = "";
 
   ngOnInit(): void {
@@ -18,6 +19,7 @@ export class ByCapitalPageComponent implements OnInit {
   }
 
   metodo(mensaje: string) {
+    console.log('miraaaa: ',mensaje);
 
   }
 

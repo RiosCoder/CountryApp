@@ -10,8 +10,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CountryListComponent implements OnInit {
   ngOnInit(): void {
     console.log('on init country list component');
-
   }
+
   @Input() listar: string = '';
   lista: string = 'mostrar';
 }
