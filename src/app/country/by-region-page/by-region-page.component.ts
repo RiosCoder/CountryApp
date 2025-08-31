@@ -4,7 +4,7 @@ import { CountryListComponent } from "../country-list/country-list.component";
 
 @Component({
   selector: 'app-by-region-page',
-  imports: [SearchInputComponent, CountryListComponent],
+  imports: [CountryListComponent],
   templateUrl: './by-region-page.component.html',
   styleUrl: './by-region-page.component.css'
 })
