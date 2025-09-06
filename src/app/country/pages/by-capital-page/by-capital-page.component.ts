@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SearchInputComponent } from "../../search-input/search-input.component";
 import { CountryListComponent } from "../../country-list/country-list.component";
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -9,8 +10,10 @@ import { CountryListComponent } from "../../country-list/country-list.component"
   styleUrl: './by-capital-page.component.css'
 })
 export class ByCapitalPageComponent implements OnInit {
-  place:string='por capital';
+  place: string = 'por capital';
   recepcionMensaje: string = "";
+
+  countryService = inject(CountryService);
 
   ngOnInit(): void {
     console.log('onInit by-capital');
@@ -19,7 +22,17 @@ export class ByCapitalPageComponent implements OnInit {
   }
 
   metodo(mensaje: string) {
-    console.log('miraaaa: ',mensaje);
+    console.log('miraaaa11: ', mensaje);
+
+    this.countryService.searchByCapital(mensaje)
+    .subscribe((respuesta)=>{
+      console.log('Respuesta: ');
+
+      console.log({respuesta});
+
+    });
+
+
 
   }
 
