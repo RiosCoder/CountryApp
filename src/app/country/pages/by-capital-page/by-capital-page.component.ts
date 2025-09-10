@@ -11,7 +11,6 @@ import { CountryService } from '../../services/country.service';
 })
 export class ByCapitalPageComponent implements OnInit {
   place: string = 'por capital';
-  place: string = 'por capital';
   recepcionMensaje: string = "";
 
   countryService = inject(CountryService)
