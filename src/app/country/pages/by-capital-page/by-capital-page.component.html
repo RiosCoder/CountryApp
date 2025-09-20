@@ -1,2 +1,2 @@
-<country-search-input (mensaje)="metodo($event)" [placeholder]="place" />
-<country-list />
+<country-search-input (mensaje)="onSearch($event)" [placeholder]="place" />
+<country-list [listaPadre]="countries()"  />

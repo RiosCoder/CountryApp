@@ -11,7 +11,21 @@
       </tr>
     </thead>
     <tbody>
-
+      @for (item of listaPadre; track item.cca2; let index =$index) {
+      <tr>
+        <td>{{ index + 1 }}</td>
+        <td>{{ item.flag }}</td>
+        <td>
+          <img [src]="item.flag" [alt]="item.flag" class="w-10" />
+        </td>
+        <!-- <td>{{item.name.common}}</td -->>
+        <td>{{item.capital}}</td>
+        <td>{{item.population}}</td>
+        <td>
+          <a class="link-primary cursor-pointer">mas informacion</a>
+        </td>
+      </tr>
+      }
     </tbody>
   </table>
 </section>

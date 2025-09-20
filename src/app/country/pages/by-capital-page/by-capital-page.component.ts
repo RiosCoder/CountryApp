@@ -1,7 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { SearchInputComponent } from "../../search-input/search-input.component";
 import { CountryListComponent } from "../../country-list/country-list.component";
 import { CountryService } from '../../services/country.service';
+import { RESTCountry } from '../../interfaces/rest-country.interface';
+import { CountryMapper } from '../../mapper/country.mapper';
+import { Country } from '../../interfaces/country.interface';
 
 @Component({
   selector: 'app-by-capital-page',
@@ -15,17 +18,27 @@ export class ByCapitalPageComponent implements OnInit {
 
   countryService = inject(CountryService)
 
+  isLoading = signal(false)
+  isError = signal<string | null>(null)
+  countries = signal<Country[]>([])
+
   ngOnInit(): void {
-    console.log('onInit by-capital');
-    console.log('mostrar que: ', this.recepcionMensaje);
 
   }
 
-  metodo(mensaje: string) {
-    console.log('miraaaa: ', mensaje);
+  onSearch(mensaje: string) {
+    if (this.isLoading())
+      return;
+    this.isLoading.set(true)
+    this.isError.set(null)
     this.countryService.searchByCapital(mensaje)
       .subscribe((resp) => {
         console.log({ resp });
+        this.isLoading.set(false);
+       const countries=CountryMapper.mapeaListaCountry(resp);
+        this.countries.set(countries);
+
+        console.log(resp);
 
       });
   }

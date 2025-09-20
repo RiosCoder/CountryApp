@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { RESTCountry } from '../interfaces/rest-country.interface';
+import { Country } from '../interfaces/country.interface';
 
 @Component({
   selector: 'country-list',
@@ -12,6 +14,6 @@ export class CountryListComponent implements OnInit {
     console.log('on init country list component');
   }
 
-  @Input() listar: string = '';
+  @Input() listaPadre: Country[] = [];
   lista: string = 'mostrar';
 }
