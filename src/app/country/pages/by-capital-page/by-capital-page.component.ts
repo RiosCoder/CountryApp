@@ -37,6 +37,7 @@ export class ByCapitalPageComponent implements OnInit {
         this.isLoading.set(false);
        const countries=CountryMapper.mapeaListaCountry(resp);
         this.countries.set(countries);
+        console.log('Respuesta servicio:');
 
         console.log(resp);
 

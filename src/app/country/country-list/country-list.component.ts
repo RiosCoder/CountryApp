@@ -10,10 +10,15 @@ import { Country } from '../interfaces/country.interface';
   styleUrl: './country-list.component.css'
 })
 export class CountryListComponent implements OnInit {
-  ngOnInit(): void {
-    console.log('on init country list component');
-  }
 
   @Input() listaPadre: Country[] = [];
   lista: string = 'mostrar';
+
+  ngOnInit(): void {
+    console.log('on init country list component');
+    console.log('lista padre: ',this.listaPadre);
+
+  }
+
+
 }

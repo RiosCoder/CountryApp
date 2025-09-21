@@ -8,11 +8,13 @@ export class CountryMapper {
       flag: "",
       flagSvg: "",
       capital: "",
-      population: 0
+      population: 0,
+      name: ""
     };
     country.cca2 = restCountry.cca2;
     country.flag = restCountry.flag;
     country.flagSvg = restCountry.flags.svg;
+    country.name = restCountry.name.common;
     country.capital = restCountry.capital.join(',');
     country.population = restCountry.population;
 
