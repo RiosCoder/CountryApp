@@ -14,7 +14,7 @@ export class CountryMapper {
     country.cca2 = restCountry.cca2;
     country.flag = restCountry.flag;
     country.flagSvg = restCountry.flags.svg;
-    country.name = restCountry.name.common;
+    country.name = restCountry.translations["spa"].common;
     country.capital = restCountry.capital.join(',');
     country.population = restCountry.population;
 

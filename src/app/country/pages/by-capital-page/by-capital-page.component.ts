@@ -32,15 +32,16 @@ export class ByCapitalPageComponent implements OnInit {
     this.isLoading.set(true)
     this.isError.set(null)
     this.countryService.searchByCapital(mensaje)
-      .subscribe((resp) => {
-        console.log({ resp });
-        this.isLoading.set(false);
-       const countries=CountryMapper.mapeaListaCountry(resp);
-        this.countries.set(countries);
-        console.log('Respuesta servicio:');
-
-        console.log(resp);
-
+      .subscribe({
+        next: (country) => {
+          this.isLoading.set(false);
+          this.countries.set(country);
+        },
+        error: (err) => {
+          this.isLoading.set(false);
+          this.countries.set([]);
+          this.isError.set(err)
+        }
       });
   }
 

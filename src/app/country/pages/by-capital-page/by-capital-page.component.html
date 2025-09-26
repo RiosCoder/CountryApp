@@ -1,2 +1,9 @@
 <country-search-input (mensaje)="onSearch($event)" [placeholder]="place" />
-<country-list [listaPadre]="countries()"  />
+
+@if (isError()) {
+<h3>
+  {{isError()}}
+</h3>
+}@else{
+<country-list [listaPadre]="countries()" />
+}
