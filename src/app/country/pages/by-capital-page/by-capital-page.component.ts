@@ -21,7 +21,6 @@ export class ByCapitalPageComponent implements OnInit {
   countries = signal<Country[]>([])
 
   ngOnInit(): void {
-
   }
 
   onSearch(mensaje: string) {
