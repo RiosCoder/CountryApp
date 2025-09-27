@@ -6,6 +6,7 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 import { Country } from '../interfaces/country.interface';
 import { CountryMapper } from '../mapper/country.mapper';
 import { ResolveStart } from '@angular/router';
+import { errorContext } from 'rxjs/internal/util/errorContext';
 
 const API_URL = 'https://restcountries.com/v3.1';
 
@@ -17,17 +18,14 @@ export class CountryService {
   private http = inject(HttpClient);
 
   searchByCapital(query: string): Observable<Country[]> {
-    query = query.toLowerCase();
-    return this.http
-      .get<RESTCountry[]>(`${API_URL}/capital/${query}`)
+    const url: string = API_URL + '/capital/' + query;
+    return this.http.get<RESTCountry[]>(url)
       .pipe(
-        map((resp) => CountryMapper.mapeaListaCountry(resp)),
+        map((respuesta) => CountryMapper.mapeaListaCountry(respuesta)),
         catchError((error) => {
-          console.log('error fetching:', error);
-
           return throwError(() =>
-            new Error('No se  pudo obtener paises con ese query: '+query))
-        })
+            new Error('No se pudo obtener paises con ese query: ' + query));
+        }),
       );
   }
 }

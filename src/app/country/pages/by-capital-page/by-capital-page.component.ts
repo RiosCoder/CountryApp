@@ -1,10 +1,8 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { SearchInputComponent } from "../../search-input/search-input.component";
 import { CountryListComponent } from "../../country-list/country-list.component";
-import { CountryService } from '../../services/country.service';
-import { RESTCountry } from '../../interfaces/rest-country.interface';
-import { CountryMapper } from '../../mapper/country.mapper';
 import { Country } from '../../interfaces/country.interface';
+import { SearchInputComponent } from "../../search-input/search-input.component";
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-by-capital-page',
