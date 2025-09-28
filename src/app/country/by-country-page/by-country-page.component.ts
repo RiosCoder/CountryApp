@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SearchInputComponent } from "../search-input/search-input.component";
 import { CountryListComponent } from "../country-list/country-list.component";
+import { CountryService } from '../services/country.service';
 
 @Component({
   selector: 'app-by-country-page',
@@ -9,6 +10,7 @@ import { CountryListComponent } from "../country-list/country-list.component";
   styleUrl: './by-country-page.component.css'
 })
 export class ByCountryPageComponent implements OnInit {
+  countryService = inject(CountryService)
   place: string = 'por pais';
   recepcionMensaje: string = "";
 
@@ -18,7 +20,7 @@ export class ByCountryPageComponent implements OnInit {
 
   }
 
-  metodo(mensaje: string) {
+  onSearch(mensaje: string) {
     console.log('miraaaa: ', mensaje);
 
   }
