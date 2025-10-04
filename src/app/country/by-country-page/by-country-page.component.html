@@ -1,3 +1,8 @@
 <h1>wee</h1>
-<country-search-input (mensaje)="onSearch($event)" [placeholder]="place" ></country-search-input>
-<country-list ></country-list>
+<country-search-input (mensaje)="onSearch($event)" [placeholder]="place"></country-search-input>
+
+@if (isError) {
+<span>error</span>
+}@else {
+<country-list [listaPadre]="listaCountry"></country-list>
+}
