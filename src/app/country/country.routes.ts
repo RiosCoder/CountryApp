@@ -17,11 +17,11 @@ export const countryRoutes: Routes = [
         component: ByCapitalPageComponent,
       },
       {
-        path: 'by-country-page',
+        path: 'by-country',
         component: ByCountryPageComponent
       },
       {
-        path: 'by-region-page',
+        path: 'by-region',
         component: ByRegionPageComponent
       },
       {

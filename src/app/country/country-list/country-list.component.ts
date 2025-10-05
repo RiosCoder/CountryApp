@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { RESTCountry } from '../interfaces/rest-country.interface';
 import { Country } from '../interfaces/country.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'country-list',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './country-list.component.html',
   styleUrl: './country-list.component.css'
 })
