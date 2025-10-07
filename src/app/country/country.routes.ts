@@ -16,11 +16,19 @@ export const countryRoutes: Routes = [
       },
       {
         path: 'by-country',
+<<<<<<< HEAD
         component: ByCountryPageComponent,
       },
       {
         path: 'by-region',
         component: ByRegionPageComponent,
+=======
+        component: ByCountryPageComponent
+      },
+      {
+        path: 'by-region',
+        component: ByRegionPageComponent
+>>>>>>> 660dc2f8ab03b956674909a88d424989223d71ea
       },
 
       {
